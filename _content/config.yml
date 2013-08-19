@@ -1,0 +1,9 @@
+site:
+    title: 'Redstalker'
+    description: "Just another programmer's development blog."
+    author: Nicholas
+    pretty_urls: true
+markdown:
+    use_markdown_extra: true
+smartypants:
+    enable: true

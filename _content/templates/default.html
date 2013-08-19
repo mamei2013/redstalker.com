@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="{{ site.author }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ site.title }}{% if page.title %} &mdash; {{ page.title }}{% endif %}</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container" id="container">
+    <header>
+        {% block header %}
+        {% if page.title %}
+        <p class="site-title"><a href="{{ site.root }}">{{ site.title }}</a></p>
+        {% else %}
+        <h1><a href="{{ site.root }}">{{ site.title }}</a></h1>
+        {% endif %}
+        {% endblock %}
+    </header>
+    <section id="main" role="main">
+        {% block main %}
+        {% if page.title %}
+        <h1 class="page-title">{{ page.title }}</h1>
+        {% endif %}
+
+        {{ content|raw }}
+        {% endblock %}
+        <hr />
+        {% block disqus %}
+        {% endblock %}
+    </section>
+    <footer>
+        {% block footer %}
+        {% endblock %}
+        <p>{{ piecrust.branding|raw }}</p>
+    </footer>
+  </div>
+
+    <script type="text/javascript" defer src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-25640691-1']);
+        _gaq.push(['_setDomainName', 'redstalker.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</body>
+</html>
